@@ -2,6 +2,8 @@
 #include "ui_Widget.h"
 #include <QDebug>
 
+//在Qt多线程中使用信号槽传递变量是非常安全的，不需要对变量进行加锁保护
+//Qt经常用信号和槽传递变量，为了降低拷贝的消耗，传递变量时经常使用常引用(const &)作为变量的传递方式
 
 TestThread::TestThread(QObject *par):QThread(par)
   ,m_abort(false)
